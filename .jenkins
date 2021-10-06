@@ -1,0 +1,13 @@
+#!/usr/bin/env groovy
+
+library identifier: 'vapor@1.0.0', retriever: modernSCM([
+  $class: 'GitSCMSource',
+  remote: 'https://github.com/vapor-ware/ci-shared.git',
+  credentialsId: 'vio-bot-gh',
+])
+
+dockerBuildPipeline([
+  'image': 'vaporio/ansible',
+  'downstreamJob': 'vapor-cloud-ops/vio-bot-dev',
+  'mainBranch': 'main',
+])
