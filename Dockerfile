@@ -6,6 +6,7 @@ RUN \
     pip install -r requirements.txt && \
     ansible-galaxy collection install community.general
 RUN apt-get update && \
-    apt-get install -y openssh-client && \
-    apt-get install -y git && \
+    apt-get install -y openssh-client \
+                       git \
+                       && \
     rm -rf /var/apt/cache
