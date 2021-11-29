@@ -1,4 +1,4 @@
-FROM vaporio/python:3.9-slim
+FROM docker.io/vaporio/python:3.9-slim
 
 ADD requirements.txt .
 
