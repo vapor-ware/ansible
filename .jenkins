@@ -10,5 +10,4 @@ dockerBuildPipeline([
   'image': 'docker.io/vaporio/ansible',
   'mainBranch': 'main',
   'usePodman': true,
-  'skipClair': true,
 ])
