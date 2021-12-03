@@ -9,5 +9,4 @@ library identifier: 'vapor@craig/VIO-1911', retriever: modernSCM([
 dockerBuildPipeline([
   'image': 'docker.io/vaporio/ansible',
   'mainBranch': 'main',
-  'usePodman': true,
 ])
