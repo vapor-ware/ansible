@@ -1,6 +1,13 @@
 FROM docker.io/vaporio/python:3.9-slim
 
+ENV SCTL_VERSION=1.5.0
+ENV GOOGLE_APPLICATION_CREDENTIALS=/localhost/.config/gcloud/application_default_credentials.json
+
 ADD requirements.txt .
+
+# Add Sctl
+ADD https://github.com/vapor-ware/sctl/releases/download/${SCTL_VERSION}/sctl_${SCTL_VERSION}_Linux_x86_64.tar.gz /tmp
+
 
 RUN \
     pip install -r requirements.txt && \
@@ -11,3 +18,8 @@ RUN apt-get update && \
                        git \
                        && \
     rm -rf /var/apt/cache
+
+WORKDIR /tmp
+
+RUN tar xzvf sctl_${SCTL_VERSION}_Linux_x86_64.tar.gz  \
+    && install sctl /usr/bin/sctl
