@@ -12,7 +12,8 @@ ADD https://github.com/vapor-ware/sctl/releases/download/${SCTL_VERSION}/sctl_${
 RUN \
     pip install -r requirements.txt && \
     ansible-galaxy collection install community.general && \
-    ansible-galaxy collection install community.docker
+    ansible-galaxy collection install community.docker && \
+    ansible-galaxy collection install netbox.netbox
 RUN apt-get update && \
     apt-get install -y openssh-client \
                        git \
@@ -23,3 +24,6 @@ WORKDIR /tmp
 
 RUN tar xzvf sctl_${SCTL_VERSION}_Linux_x86_64.tar.gz  \
     && install sctl /usr/bin/sctl
+
+WORKDIR /root
+
