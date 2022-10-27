@@ -9,4 +9,6 @@ library identifier: 'vapor@1.20.1', retriever: modernSCM([
 dockerBuildPipeline([
   'image': 'docker.io/vaporio/ansible',
   'mainBranch': 'main',
+  'skipClair': true,
 ])
+
