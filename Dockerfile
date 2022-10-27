@@ -25,5 +25,5 @@ WORKDIR /tmp
 RUN tar xzvf sctl_${SCTL_VERSION}_Linux_x86_64.tar.gz  \
     && install sctl /usr/bin/sctl
 
-WORKDIR /root
+WORKDIR /
 
