@@ -2,3 +2,5 @@ ansible==6.0.0
 ansible-lint[yamllint]
 pre-commit
 pytz
+pynetbox
+netaddr

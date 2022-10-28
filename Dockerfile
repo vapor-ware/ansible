@@ -17,8 +17,10 @@ RUN \
 RUN apt-get update && \
     apt-get install -y openssh-client \
                        git \
+                       sshpass \
                        && \
-    rm -rf /var/apt/cache
+    rm -rf /var/apt/cache && \
+    mkdir /root/.ssh
 
 WORKDIR /tmp
 
