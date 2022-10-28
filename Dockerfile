@@ -19,7 +19,8 @@ RUN apt-get update && \
                        git \
                        sshpass \
                        && \
-    rm -rf /var/apt/cache
+    rm -rf /var/apt/cache && \
+    mkdir /root/.ssh
 
 WORKDIR /tmp
 
